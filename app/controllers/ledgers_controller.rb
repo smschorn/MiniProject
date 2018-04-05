@@ -4,7 +4,7 @@ class LedgersController < ApplicationController
   # GET /ledgers
   # GET /ledgers.json
   def index
-    @ledgers = Ledger.all
+    @ledgers = current_user.ledgers.all
   end
 
   # GET /ledgers/1
@@ -14,7 +14,7 @@ class LedgersController < ApplicationController
 
   # GET /ledgers/new
   def new
-    @ledger = Ledger.new
+    @ledger = current_user.ledgers.build
   end
 
   # GET /ledgers/1/edit
@@ -24,7 +24,7 @@ class LedgersController < ApplicationController
   # POST /ledgers
   # POST /ledgers.json
   def create
-    @ledger = Ledger.new(ledger_params)
+    @ledger = current_user.ledgers.build(ledger_params)
 
     respond_to do |format|
       if @ledger.save
@@ -64,7 +64,7 @@ class LedgersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ledger
-      @ledger = Ledger.find(params[:id])
+      @ledger = current_user.ledgers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

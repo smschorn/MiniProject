@@ -482,3 +482,351 @@ Processing by LedgersController#index as HTML
 Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:32:53 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 20.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:32:56 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 59ms (Views: 27.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-04-04 21:33:55 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/_form.html.erb (2.0ms)
+  Rendered accounts/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 56ms (Views: 29.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-04-04 21:35:12 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/_form.html.erb (2.2ms)
+  Rendered accounts/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 51ms (Views: 24.0ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-04-04 21:35:27 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ywFdMQjS6pKcU8r9bpVAvfr3R0VKFp1rFnAvx3fuOMfqlrcp1MKTmN2CmG/Xx54GkSBhMJgezQh1Q5CiZQJUPw==", "account"=>{"name"=>"Citi 2", "description"=>"", "interest_rate"=>"6", "user_id"=>"1"}, "commit"=>"Create Account"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "description", "interest_rate", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Citi 2"], ["description", ""], ["interest_rate", 6.0], ["user_id", 1], ["created_at", "2018-04-05 01:35:27.829271"], ["updated_at", "2018-04-05 01:35:27.829271"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts/2
+Completed 302 Found in 13ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-04-04 21:35:27 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 AND "accounts"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:35:32 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-04-04 21:35:35 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/_form.html.erb (2.5ms)
+  Rendered accounts/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:35:48 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-04-04 21:35:50 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ledgers/index.html.erb within layouts/application
+  [1m[36mLedger Load (0.4ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  Rendered ledgers/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 55ms (Views: 45.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/ledgers/new" for 127.0.0.1 at 2018-04-04 21:35:52 -0400
+Processing by LedgersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering ledgers/new.html.erb within layouts/application
+  Rendered ledgers/_form.html.erb (3.1ms)
+  Rendered ledgers/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:35:59 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered accounts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-04 21:36:03 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vRztoSbiyHwmdWwDeVQAQdPgeY3+OpgaWKbA30noYbWciwe5+vKxdmekPpHABt76uDdf+CwyyHk7lX+6WwQNTQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:36:03 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-04 21:36:03 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-04 21:36:09 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-04 21:36:28 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MG8S9cOEgx7qyu97iaj7IGkG5Rwx4YEfftkZYWhaeZcnnaGlciSP5qYZEkAuoyrPaZNdwxK8XB+XHzMg0tvmrA==", "user"=>{"email"=>"test2@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test2@email.com"], ["encrypted_password", "$2a$11$QqdLI1vW8QUkzqeWFz17H.ZzcWPrYzvPQ5/amkzepsgSrXtazcVhO"], ["created_at", "2018-04-05 01:36:28.212781"], ["updated_at", "2018-04-05 01:36:28.212781"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-04-05 01:36:28.221504"], ["last_sign_in_at", "2018-04-05 01:36:28.221504"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-04-05 01:36:28.222210"], ["id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 168ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:36:28 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:36:35 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered accounts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 34.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:37:58 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 20.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-04-04 21:38:02 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/index.html.erb within layouts/application
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered ledgers/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 26.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/ledgers/new" for 127.0.0.1 at 2018-04-04 21:38:03 -0400
+Processing by LedgersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/new.html.erb within layouts/application
+  Rendered ledgers/_form.html.erb (2.1ms)
+  Rendered ledgers/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 45ms (Views: 28.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/ledgers" for 127.0.0.1 at 2018-04-04 21:38:10 -0400
+Processing by LedgersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2xfvbSOXgGIAw0YcqlN4M2NGe7QFB0B6xbrDsHimI8A15HfLpGuDu0WMC01sNmdgV3uLauSWbiJJ88xJiqRXYg==", "ledger"=>{"user_id"=>"2", "year"=>"2018", "month"=>"04"}, "commit"=>"Create Ledger"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ledgers" ("user_id", "year", "month", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["year", 2018], ["month", 4], ["created_at", "2018-04-05 01:38:10.317167"], ["updated_at", "2018-04-05 01:38:10.317167"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/ledgers/2
+Completed 302 Found in 12ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/ledgers/2" for 127.0.0.1 at 2018-04-04 21:38:10 -0400
+Processing by LedgersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/show.html.erb within layouts/application
+  Rendered ledgers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-04-04 21:38:14 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/index.html.erb within layouts/application
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered ledgers/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 28.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ledgers/new" for 127.0.0.1 at 2018-04-04 21:38:20 -0400
+Processing by LedgersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/new.html.erb within layouts/application
+  Rendered ledgers/_form.html.erb (1.9ms)
+  Rendered ledgers/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:39:47 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:39:53 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered accounts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 27.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-04-04 21:39:55 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/_form.html.erb (2.5ms)
+  Rendered accounts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 51ms (Views: 30.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-04-04 21:40:08 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lKr1mpRBCOAzBjTsPWjLWgnA8ErC6KyLTt8T1uohAu/oWKEcqrANUY1VwtqygtQNef8GrkwicuJRmLitEPxDSA==", "account"=>{"name"=>"AmEx", "description"=>"favorite", "interest_rate"=>"6"}, "commit"=>"Create Account"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "description", "interest_rate", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "AmEx"], ["description", "favorite"], ["interest_rate", 6.0], ["user_id", 2], ["created_at", "2018-04-05 01:40:08.688231"], ["updated_at", "2018-04-05 01:40:08.688231"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/accounts/3
+Completed 302 Found in 12ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-04-04 21:40:08 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1 AND "accounts"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-04-04 21:40:11 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering accounts/index.html.erb within layouts/application
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered accounts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 21:40:19 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-04-04 21:40:22 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/index.html.erb within layouts/application
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered ledgers/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 27.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ledgers/new" for 127.0.0.1 at 2018-04-04 21:40:24 -0400
+Processing by LedgersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/new.html.erb within layouts/application
+  Rendered ledgers/_form.html.erb (6.8ms)
+  Rendered ledgers/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/ledgers" for 127.0.0.1 at 2018-04-04 21:40:30 -0400
+Processing by LedgersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SVE4O/kESWuAorg6iNTiAZJ5sO1nyFyDqLYR8+B2y6CnoqCdfvhKssXt9WtOsf1SpkRAM4ZZctsk/x4KEnS/Ag==", "ledger"=>{"year"=>"2018", "month"=>"04"}, "commit"=>"Create Ledger"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ledgers" ("user_id", "year", "month", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["year", 2018], ["month", 4], ["created_at", "2018-04-05 01:40:30.997625"], ["updated_at", "2018-04-05 01:40:30.997625"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/ledgers/3
+Completed 302 Found in 12ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/ledgers/3" for 127.0.0.1 at 2018-04-04 21:40:31 -0400
+Processing by LedgersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendering ledgers/show.html.erb within layouts/application
+  Rendered ledgers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ledgers" for 127.0.0.1 at 2018-04-04 21:40:33 -0400
+Processing by LedgersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering ledgers/index.html.erb within layouts/application
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered ledgers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
