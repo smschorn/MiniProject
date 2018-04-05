@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :ledgers
+  resources :accounts
   devise_for :users
 
   root to: 'welcome#index'
