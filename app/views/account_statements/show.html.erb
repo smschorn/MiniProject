@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @account_statement.account.name %>
+</p>
+
+<p>
+  <strong>Current balance:</strong>
+  <%= @account_statement.current_balance %>
+</p>
+
+<p>
+  <strong>Minimum payment:</strong>
+  <%= @account_statement.minimum_payment %>
+</p>
+
+<%= link_to 'Edit', edit_ledger_account_statement_path(@ledger, @account_statement) %> |
+<%= link_to 'Back', ledger_account_statements_path(@ledger) %>
