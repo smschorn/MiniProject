@@ -15,5 +15,9 @@
   <%= @ledger.month %>
 </p>
 
+<p>
+  <%= link_to 'Account Statements', ledger_account_statements_path(@ledger) %>
+</p>
+
 <%= link_to 'Edit', edit_ledger_path(@ledger) %> |
 <%= link_to 'Back', ledgers_path %>

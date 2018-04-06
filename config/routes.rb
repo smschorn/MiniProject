@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :ledgers
+  resources :ledgers do
+    resources :account_statements
+  end
+
   resources :accounts
   devise_for :users
 
