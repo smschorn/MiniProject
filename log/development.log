@@ -1587,3 +1587,113 @@ Processing by AccountStatementsController#show as HTML
 Completed 200 OK in 40ms (Views: 31.7ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/ledgers/2/account_statements/2" for 127.0.0.1 at 2018-04-05 22:07:44 -0400
+Processing by AccountStatementsController#show as HTML
+  Parameters: {"ledger_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mAccountStatement Load (0.4ms)[0m  [1m[34mSELECT  "account_statements".* FROM "account_statements" WHERE "account_statements"."ledger_id" = $1 AND "account_statements"."id" = $2 LIMIT $3[0m  [["ledger_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering account_statements/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered account_statements/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/ledgers/2/account_statements/2" for 127.0.0.1 at 2018-04-05 22:10:53 -0400
+Processing by AccountStatementsController#show as HTML
+  Parameters: {"ledger_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mAccountStatement Load (0.2ms)[0m  [1m[34mSELECT  "account_statements".* FROM "account_statements" WHERE "account_statements"."ledger_id" = $1 AND "account_statements"."id" = $2 LIMIT $3[0m  [["ledger_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering account_statements/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered account_statements/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ledgers/2/account_statements/2" for 127.0.0.1 at 2018-04-05 22:14:06 -0400
+Processing by AccountStatementsController#show as HTML
+  Parameters: {"ledger_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.3ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mAccountStatement Load (0.2ms)[0m  [1m[34mSELECT  "account_statements".* FROM "account_statements" WHERE "account_statements"."ledger_id" = $1 AND "account_statements"."id" = $2 LIMIT $3[0m  [["ledger_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering account_statements/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered account_statements/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 23.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ledgers/2/account_statements/2" for 127.0.0.1 at 2018-04-05 22:15:23 -0400
+Processing by AccountStatementsController#show as HTML
+  Parameters: {"ledger_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mAccountStatement Load (0.3ms)[0m  [1m[34mSELECT  "account_statements".* FROM "account_statements" WHERE "account_statements"."ledger_id" = $1 AND "account_statements"."id" = $2 LIMIT $3[0m  [["ledger_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering account_statements/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered account_statements/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/scottschorn/code/wdi/unit_04/hw/MiniProject/app/assets/config
+  /Users/scottschorn/code/wdi/unit_04/hw/MiniProject/app/assets/images
+  /Users/scottschorn/code/wdi/unit_04/hw/MiniProject/app/assets/javascripts
+  /Users/scottschorn/code/wdi/unit_04/hw/MiniProject/app/assets/stylesheets
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /Users/scottschorn/code/wdi/unit_04/hw/MiniProject/node_modules
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/popper_js-1.12.9/assets/javascripts
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/stylesheets
+  /Users/scottschorn/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/bootstrap-4.0.0/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3854058721049120419_70363918256340'
+Started GET "/ledgers/2/account_statements/2" for 127.0.0.1 at 2018-04-05 22:17:19 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AccountStatementsController#show as HTML
+  Parameters: {"ledger_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Load (0.4ms)[0m  [1m[34mSELECT  "ledgers".* FROM "ledgers" WHERE "ledgers"."user_id" = $1 AND "ledgers"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mAccountStatement Load (0.4ms)[0m  [1m[34mSELECT  "account_statements".* FROM "account_statements" WHERE "account_statements"."ledger_id" = $1 AND "account_statements"."id" = $2 LIMIT $3[0m  [["ledger_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering account_statements/show.html.erb within layouts/application
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered account_statements/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 2885ms (Views: 2795.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-05 22:17:56 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-05 22:18:45 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 53.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-05 22:18:47 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
