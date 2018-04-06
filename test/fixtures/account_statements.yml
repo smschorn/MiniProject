@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ledger_id: 1
+  account_id: 1
+  current_balance: 1.5
+  minimum_payment: 1.5
+
+two:
+  ledger_id: 1
+  account_id: 1
+  current_balance: 1.5
+  minimum_payment: 1.5
