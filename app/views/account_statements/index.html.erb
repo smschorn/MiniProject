@@ -1,1 +1,28 @@
-<%= link_to 'new account statement', new_ledger_account_statement_path %>
+<h1>Account Statements</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Current Balance</th>
+      <th>Minimum Payment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account_statements.each do |account_statement| %>
+      <tr>
+        <td><%= account_statement.account.name %></td>
+        <td><%= account_statement.current_balance %></td>
+        <td><%= account_statement.minimum_payment %></td>
+        <td><%= link_to 'Show', ledger_account_statement_path(@ledger, account_statement) %></td>
+        <td><%= link_to 'Edit', edit_ledger_account_statement_path(@ledger, account_statement) %></td>
+        <td><%= link_to 'Destroy', ledger_account_statement_path(@ledger, account_statement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'new account statement', new_ledger_account_statement_path %>
+</p>

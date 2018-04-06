@@ -1,0 +1,32 @@
+<%= form_with(model: [@ledger, account_statement], local: true) do |form| %>
+<% if account_statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account_statement.errors.count, "error") %> prohibited this account_statement from being saved:</h2>
+
+      <ul>
+      <% account_statement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :account_id %>
+    <%= form.collection_select :account_id, @accounts, :id, :name, id: :account_statement_account_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_balance %>
+    <%= form.text_field :current_balance, id: :account_statement_current_balance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minimum_payment %>
+    <%= form.text_field :minimum_payment, id: :account_statement_minimum_payment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

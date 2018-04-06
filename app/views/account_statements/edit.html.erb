@@ -1,0 +1,6 @@
+<h1>Edit Account Statement</h1>
+
+<%= render "form", account_statement: @account_statement %>
+
+<%= link_to 'Show', ledger_account_statement_path(@ledger, @account_statement) %> |
+<%= link_to 'Back', ledger_account_statements_path(@ledger) %>
